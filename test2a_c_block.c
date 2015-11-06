@@ -3,8 +3,8 @@
 #include <math.h>
 
 /*This is the rewriting of Rocco's matlab code to C*/
-#define xnum 101
-#define ynum 51
+#define xnum 151
+#define ynum 61
 #define nb 5 //number of block
 
 double Max (double *a)
@@ -283,10 +283,10 @@ void main()
 {
     int i=0,j=0,r=0;
     //Model size
-    double xsize=5e4;
-    double ysize=5e3;
+    double xsize=5e5;
+    double ysize=5e4;
     //Number of time steps
-    int maxtnum=10000;
+    int maxtnum=200000;
     //grid size
     double dx=xsize/(xnum-1);
     double dy=ysize/(ynum-1);
@@ -331,37 +331,37 @@ void main()
     double L[nb],W[nb];//length and width of block
     double xlb[nb],xrb[nb],ytb[nb],ybb[nb];//edges of the blocks
     //Block a
-    xc[0]=xsize*0.5-3e3;
-    yc[0]=2.5e3;
-    L[0]=2.8e3;W[0]=1e3;
+    xc[0]=xsize*0.5-3e4;
+    yc[0]=25e3;
+    L[0]=28e3;W[0]=10e3;
     Kbx[0]=kxbg*5;
     Kby[0]=kybg*5;
 
     //block b
-    xc[1]=xsize*0.5+5e2;
-    yc[1]=2e3;
-    L[1]=1.5e3;W[1]=1.5e3;
+    xc[1]=xsize*0.5+5e3;
+    yc[1]=20e3;
+    L[1]=15e3;W[1]=15e3;
     Kbx[1]=kxbg*4;
     Kby[1]=kybg*4;
 
     //block c
-    xc[2]=xsize*0.5+5e3;
-    yc[2]=1.8e3;
-    L[2]=1.2e3;W[2]=1.2e3;
+    xc[2]=xsize*0.5+50e3;
+    yc[2]=18e3;
+    L[2]=12e3;W[2]=12e3;
     Kbx[2]=kxbg*15;
     Kby[2]=kybg*5;
 
     //block d
-    xc[3]=xsize*0.5+5e3+8e3;
-    yc[3]=1.5e3;
-    L[3]=1.2e3;W[3]=1.2e3;
+    xc[3]=xsize*0.5+50e3+80e3;
+    yc[3]=15e3;
+    L[3]=12e3;W[3]=12e3;
     Kbx[3]=kxbg*15;
     Kby[3]=kybg*15;
 
     //block e
-    xc[4]=xsize*0.5+11e3;
-    yc[4]=1.4e3;
-    L[4]=1.1e3;W[4]=1.1e3;
+    xc[4]=xsize*0.5+110e3;
+    yc[4]=14e3;
+    L[4]=11e3;W[4]=11e3;
     Kbx[4]=kxbg*25;
     Kby[4]=kybg*25;
 
